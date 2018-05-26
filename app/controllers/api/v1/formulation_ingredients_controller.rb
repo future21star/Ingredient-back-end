@@ -10,7 +10,7 @@ class Api::V1::FormulationIngredientsController < ApplicationController
 	end
 
 	def printIngredients
-		@user_profile = params[:user_profile] || {first_name: '', last_name: '', address: '', birthday: ''}
+		@user_profile = params[:user_profile]
 		ingredients = params[:selected_ingredients]
 		@ingredients = []
 		ingredients.each do |ingredient|

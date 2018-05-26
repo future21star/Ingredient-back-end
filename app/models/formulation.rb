@@ -2,5 +2,5 @@ class Formulation < ApplicationRecord
 	has_many :formulation_ingredients, dependent: :destroy
 
 	#validates
-	validates_presence_of :name, :created_by
+	validates_presence_of :name
 end

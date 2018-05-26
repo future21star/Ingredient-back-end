@@ -19,9 +19,9 @@ class ReportPdf < Prawn::Document
 
     # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
     bounding_box([0, y_position], :width => 270, :height => 300) do
-      text @user_profile[:first_name] + " " + @user_profile[:last_name], size: 15, style: :bold
-      text @user_profile[:address], size: 15, style: :bold
-      text @user_profile[:birthday], size: 15, style: :bold
+      text "Name: " + @user_profile[:first_name] + " " + @user_profile[:last_name], size: 15, style: :bold
+      text "Address: " + @user_profile[:address], size: 15, style: :bold
+      text "Birthday: " + @user_profile[:birthday], size: 15, style: :bold
     end
   end
 

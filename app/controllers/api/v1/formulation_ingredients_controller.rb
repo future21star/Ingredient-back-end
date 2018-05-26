@@ -19,7 +19,8 @@ class Api::V1::FormulationIngredientsController < ApplicationController
 			end
 		end
 		pdf = ReportPdf.new(@user_profile, @ingredients)
-		pdf.render_file("#{Rails.root}/tmp/pdf/print.pdf")
+		Dir.mkdir(Rails.root.join('tmp'))
+		pdf.render_file("#{Rails.root}/tmp/print.pdf")
 		encoded_string = Base64.encode64(File.open("#{Rails.root}/tmp/pdf/print.pdf"){|i| i.read})		
 
 		render json: { :pdf => encoded_string }
